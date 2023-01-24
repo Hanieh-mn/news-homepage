@@ -35,6 +35,11 @@ body {
   display: none;
 }
 
+.navbar {
+  display: flex;
+  list-style: none;
+}
+
 .navbar li {
   display: inline;
 }
@@ -48,6 +53,10 @@ body {
 
 .navbar li a:hover {
   color: #ee5c4f;
+}
+
+.closemenu {
+  display: none;
 }
 
 .main {
@@ -320,21 +329,58 @@ body {
 }
 
 @media only screen and (max-width: 830px) {
-  .navbar {
-    display: none;
-  }
 
   .mobile-menu {
+    width: 50px;
     display: block;
     cursor: pointer;
   }
 
-  .header {
-    padding-top: 25px;
+  .navbar {
+    height: 50vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    transition: top 1s ease;
+    display: none;
   }
 
-  .mobile-menu {
-    width: 50px;
+  .navbar li {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li a {
+    padding: 8px 0;
+    font-size: 22px;
+    color: rgb(29, 27, 27);
+}
+
+.navbar li a:hover {
+    font-size: 23px;
+}
+  .closemenu {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    display: block;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 12px 15px;
+}
+
+.closemenu:hover {
+    box-shadow: 1px 1px 15px #ccccce;
+}
+
+  .header {
+    padding-top: 25px;
   }
 
   .main {
